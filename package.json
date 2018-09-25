@@ -1,0 +1,20 @@
+{
+  "name": "course-cli",
+  "version": "1.0.0",
+  "description": "A tiny learning system cli",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "course-cli": "./index.js"
+  },
+  "keywords": [],
+  "author": "Chris Impicciche",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "cli-table3": "^0.5.1",
+    "inquirer": "^6.2.0"
+  }
+}
