@@ -96,8 +96,9 @@ describe('Courses', ()=>{
     })
 
     it('should print enrolled courses', ()=>{
+      courses.user = 'Bob';
       const spy = jest.spyOn(global.console, 'log');
-      courses.print()
+      courses.print();
       expect(spy).toHaveBeenCalled();
     })
 
