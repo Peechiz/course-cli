@@ -9,6 +9,8 @@ I had fun making this little command line CRUD app.  I took partial inspiration 
   - pretty colors
 - [cli-table3](https://github.com/cli-table/cli-table3)
   - because `cli-table` didn't have column spanning
+- [jest](https://jestjs.io/)
+  - unit testing
 
 ## Usage:
 ```Shell
@@ -22,12 +24,18 @@ $ course-cli [courses.txt]
 
 1. Credit hours have been capped at 10, although 4 or 5 is [probably the maximum](https://en.wikipedia.org/wiki/Course_credit#Credit_hours) for a single class at any university.
 
-2. While `courses.txt` was provided, the application was built to accomodate any text file of similar format (or none) as input, i.e. 
+2. While `courses.txt` was provided, the application was built to accomodate any text file of similar format as input. 
 ```sh
 $ course-cli other-courses.txt
 ```
 
-3. It is assumed that if you make changes to the list of classes, you'd want those changes persisted in the text file, so the application writes out the full list of courses at the end of each session.
+3. If `courses.txt` does not exist and no filename is provided as a second argument, `$ course-cli` will output a new `courses.txt`
+
+4. It is assumed that if you make changes to the list of classes, you'd want those changes persisted in the text file, so the application writes out the full list of courses at the end of each session.
+
+5. While it was not specifically required, I added a test suite to cover the `Courses` class. As above, these can be run with `npm run test`
+
+6. The application assumes that `courses.txt` will be provided in the correct format.
 
 
 ## Deviations
