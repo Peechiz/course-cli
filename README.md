@@ -17,8 +17,8 @@ $ npm run test
 $ course-cli [courses.txt]
 ```
 
+
 ## Assumptions
-___
 
 1. Credit hours have been capped at 10, although 4 or 5 is [probably the maximum](https://en.wikipedia.org/wiki/Course_credit#Credit_hours) for a single class at any university.
 
@@ -29,8 +29,8 @@ $ course-cli other-courses.txt
 
 3. It is assumed that if you make changes to the list of classes, you'd want those changes persisted in the text file, so the application writes out the full list of courses at the end of each session.
 
+
 ## Deviations
-___
 
 While the instructions called for the 'favorites' list to be inputted via a "comma separated list of ids", the library `inquirer` has a rather robust checkbox selector that I rather like, so I used that instead (because i have complete control over the input, it makes validation unneccesary).  Were I to have written it the other way, it would have been a fairly trivial matter to use a standard input `prompt` with tweaked filter and validation methods:
 
