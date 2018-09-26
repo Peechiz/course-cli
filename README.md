@@ -29,7 +29,7 @@ $ course-cli [courses.txt]
 $ course-cli other-courses.txt
 ```
 
-3. If `courses.txt` does not exist and no filename is provided as a second argument, `$ course-cli` will output a new `courses.txt`
+3. If `courses.txt` does not exist and no filename is provided as a second argument, `$ course-cli` will output a new `courses.txt` to the current working directory.
 
 4. It is assumed that if you make changes to the list of classes, you'd want those changes persisted in the text file, so the application writes out the full list of courses at the end of each session.
 
