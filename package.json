@@ -15,6 +15,7 @@
   "dependencies": {
     "chalk": "^2.4.1",
     "cli-table3": "^0.5.1",
+    "figlet": "^1.2.0",
     "inquirer": "^6.2.0"
   },
   "devDependencies": {

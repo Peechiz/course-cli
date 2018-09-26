@@ -2,6 +2,7 @@
 
 const readline = require('readline');
 const fs = require('fs');
+const figlet = require('figlet')
 
 const q = require('./lib/questions');
 const Courses = require('./lib/courses');
@@ -28,30 +29,36 @@ if (fs.existsSync(file)){
 }
 
 function run(){
-  // courses loaded
-  courses.list();
+  figlet.text('Course CLI', { font: 'big' }, function (err, appTitle) {
+    if (err) throw err;
+    console.log(appTitle);
 
-  // begin CLI
-  q.getName()
-  .then(answer => {
-    courses.user = answer.name;
-  })
-  .then(() => {
-    return actionLoop(courses);
-  })
-  .then(({ favorites }) => {
-    courses.setFavorites(favorites);
-    courses.list(c => c.favorite, 'enrolled courses');
-    courses.print();
-  })
-  .then(() => {
-    // write to courses.txt
-    const data = courses.export();
-    fs.writeFile(file, data, err => {
-      if (err) throw err;
-      console.log('Courses updated. Goodbye.')
-    })
-  })
+    // courses loaded
+    courses.list();
+
+    // begin CLI
+    q.getName()
+      .then(answer => {
+        courses.user = answer.name;
+      })
+      .then(() => {
+        return actionLoop(courses);
+      })
+      .then(({ favorites }) => {
+        courses.setFavorites(favorites);
+        courses.list(c => c.favorite, 'enrolled courses');
+        courses.print();
+      })
+      .then(() => {
+        // write to courses.txt
+        const data = courses.export();
+        fs.writeFile(file, data, err => {
+          if (err) throw err;
+          console.log('Courses updated. Goodbye.')
+        })
+      })
+
+  });
 }
 
 // 1. ask name

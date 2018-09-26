@@ -11,6 +11,8 @@ I had fun making this little command line CRUD app.  I took partial inspiration 
   - because `cli-table` didn't have column spanning
 - [jest](https://jestjs.io/)
   - unit testing
+- [figlet](https://github.com/patorjk/figlet.js)
+  - *pizzazz*
 
 ## Usage:
 ```Shell
