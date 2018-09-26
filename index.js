@@ -34,7 +34,7 @@ function run(){
   // begin CLI
   q.getName()
   .then(answer => {
-    courses.username = answer.name;
+    courses.user = answer.name;
   })
   .then(() => {
     return actionLoop(courses);
